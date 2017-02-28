@@ -1,2 +1,3 @@
 # nice2metu
-idea
+##idea
+###官方示例counter

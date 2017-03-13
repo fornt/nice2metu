@@ -1,7 +1,17 @@
-import React,{ Component, PropTypes } from 'react';
 
-class app extend Component {
-	render() {
-				
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import Counter from '../components/counter';
+import * as CounterActions from '../Actions/counter'
+
+function mapStateToProps(state) {
+	return {
+		counter:state.counter
 	}
 }
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(CounterActions,dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+
